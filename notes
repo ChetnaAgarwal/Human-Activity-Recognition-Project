@@ -1,0 +1,91 @@
+HUMAN ACTIVITY RECOGNITION 
+
+NOTEBOOK 1 - EDA NOTES
+
+PREPARE TRAINING DATA
+1. get features list from features.txt and create a list of features to be used as header for the x_train dataset.
+2. no of features = 561.
+3. load training dataset from train.txt. Set the header equal to features list made in point 1. 
+4. load the subject_train.txt file and add a new column called subject to training dataset and set it equal to this.
+5. load the y_train.txt file. We'll get a list of encoded activities(1-6) from this.
+6. prepare a new list mapping encoded activities to corresponding labels.
+7. prepare a new dataset. Add all X_train columns. Add a column of encoded activities and of activity labels.
+8. Call the final dataset 'train'.
+
+PREPARE TESTING DATA - exactly similar to training dataset
+1. Call the final dataset 'test'.
+
+DATA CLEANING
+1. Check for duplicate rows.
+2. Check for null values.
+3. Check for data imbalance. Make countplots - data comes out well balanced (Not skewed). 
+
+CHANGE FEATURE NAMES
+1. Get rid of spl. chars in the names of features to handle them easily.
+
+SAVE THE DATAFRAMES AS 2 SEPARATE CSV FILES in csv_files folder - train.csv and test.csv
+
+EXPLORATORY DATA ANALYSIS
+1. Try to fing features that separate stationary and moving activities.(They will be treated differently - this we know from domain knowledge)
+2. As an example, plot tBodyAccMagMean for all separate activities using FacetGrid. Result - all the stationary activities have tbody acceleration less than -0.5 whereas for dynamic activities, it is greater than -0.5.
+3. Draw distplot for the feature "tBodyAccMagMean". Result - magnitude of acceleration separates stationary and moving activities quite well.(low for stationary and high for moving)
+4. Draw boxplots of all features to figure out which one displays maximum info.
+5. Examine few boxplots that convey some info.
+   Example :-
+   --> tBodyAccMagMean
+       # if tAccMean < -0.8, then activities are either standing, sitting, or laying (stationary activities)
+       # if tAccMean > -0.6, then activities are either walking, walking downstairs or walking upstairs (dynamic activities)
+       # if tAccMean > 0.0, the activity is walking downstairs
+   --> angleXgravityMean
+       # if angleXgravityMean > 0, the activity is laying. We can classify all datapoints belonging to laying with a single if stmt.
+   --> angleYgravityMean
+6. Apply t-sne on the data
+
+
+NOTEBOOK 2 - MACHINE LEARNING MODELS
+
+1. Import libraries and csv file train and test.
+2. Get x_train, y_train, x_test and y_test from the csv files by selecting appropriate columns.
+3. Implement a function to plot NORMALIZED confusion matrix.
+4. Define a generic function called perform_model() to run any model specified.
+    -> inputs - model, x_train, y_train, x_test, y_test, class_labels, cm_normalize(by default,True)
+    -> define a results dictionary(to store results at various phases).
+    -> fit the model with x_train and y_train and add the training time in results dictionary.
+    -> predict the results on x_test and store testing time in results.
+    -> calculate accuracy and store in results.
+    -> calculate confusion matrix(not normalized) and store it in results.
+    -> calculate confusion matrix(normalized) using function defined above. Store in results.
+    -> get classification report and add it to results.
+    -> also add trained model to results and return results.
+5. Write a method to print grid search attributes.
+    -> input - model
+    -> Print the following :-
+        1. estimator that gave highest score among all the estimators formed in grid search (model.best_estimator_)
+        2. parameters that gave the best results while performing grid search (model.best_params_)
+        3. number of cross validation splits (model.n_splits_)
+        4. avg cross validated score of the best estimator, from the grid search (model.best_score_)
+6. MODEL 1 - LOGISTIC REGRESSION
+    -> grid search parameter values - C, penalty, solver
+7. MODEL 2 - LINEAR SVC
+    -> grid search parameter values - C
+    -> model parameters - tol
+8. MODEL 3 - KERNEL SVM
+    -> grid search parameter values - C, gamma
+    -> model parameters - kernel('rbf')
+9. MODEL 4 - DECISION TREE
+    -> grid search parameter values - max_depth
+10. RANDOM FOREST CLASSIFIER
+    -> grid search parameter values - n_estimators, max_depth
+11. GRADIENT BOOSTED DECISION TREES
+    -> grid search parameter values - max_depth, n_estimators
+12. For all above models(6 - 11):-
+    -> define parameter values for grid search.
+    -> apply the model
+    -> apply grid search to this model.
+    -> call perform model and print results.
+    -> print grid search attributes.
+13. COMPARE ALL MODELS
+    -> print out accuracy and error for each model and compare.
+    -> RESULTS :-
+        
+14. Save all models using pickle.
