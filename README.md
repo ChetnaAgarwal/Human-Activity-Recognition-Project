@@ -13,8 +13,11 @@ Best accuracy was given by Logistic Regression and RBF SVM classifier (96.27%), 
  Prepared training and testing dataframes from features given in text files. A total of 561 features are there.
 
 -> Performed data cleaning.
+
 -> Checked for data imbalance.
+
 -> Found features that separate stationary and moving activities using different plots like distplot and boxplot.
+
 -> Applied t-SNE on the data.
 
 
@@ -24,13 +27,9 @@ Best accuracy was given by Logistic Regression and RBF SVM classifier (96.27%), 
 
       1. Logistic Regression
       2. Linear SVC
-      
       3. Kernel SVM
-      
       4. Decision Tree
-      
       5. Random Forest Classifier
-      
       6. Gradient Boosted decision Trees
       
 -> Used Grid Search for all above models to find the best values for hyperparameters.
