@@ -14,19 +14,18 @@ Best accuracy was given by Logistic Regression and RBF SVM classifier (96.27%), 
 
 -> Performed data cleaning.
 
->> Checked for data imbalance.
+-> Checked for data imbalance.
 
->> Found features that separate stationary and moving activities using different plots like distplot and boxplot.
+-> Found features that separate stationary and moving activities using different plots like distplot and boxplot.
 
->> Applied t-SNE on the data.
+-> Applied t-SNE on the data.
 
 
 #STEP 2 : Machine learning Models
 
->> Trained various ML models:
+-> Trained various ML models:
 
       1. Logistic Regression
-      
       2. Linear SVC
       
       3. Kernel SVM
@@ -37,11 +36,11 @@ Best accuracy was given by Logistic Regression and RBF SVM classifier (96.27%), 
       
       6. Gradient Boosted decision Trees
       
->> Used Grid Search for all above models to find the best values for hyperparameters.
+-> Used Grid Search for all above models to find the best values for hyperparameters.
 
->> Used Cross Validation to get final accuracies for models using hyperparameter values found out by Grid Search.
+-> Used Cross Validation to get final accuracies for models using hyperparameter values found out by Grid Search.
 
->> Printed classification report, accuracy obtained and times taken for training and testing the models. Also plotted confusion matrix.
+-> Printed classification report, accuracy obtained and times taken for training and testing the models. Also plotted confusion matrix.
 
->> Pickle files of saved models are available in the models folder.
+-> Pickle files of saved models are available in the models folder.
 
