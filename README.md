@@ -40,3 +40,8 @@ Best accuracy was given by Logistic Regression and RBF SVM classifier (96.27%), 
 
 -> Pickle files of saved models are available in the models folder.
 
+## RESULTS
+
+ Logistic regression results :
+ 
+ ![Alt text](https://github.com/ChetnaAgarwal/Human-Activity-Recognition-Project/blob/master/human%20activity%20result%20snapshots/log%20reg%20result%20snapshot.png)
