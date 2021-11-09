@@ -8,11 +8,11 @@ Various Machine Learning algorithms were tested and their hyperparameters were t
 Best accuracy was given by Logistic Regression and RBF SVM classifier (96.27%), followed by LinearSVC (95.55%). Tree based models gave less accurate results.
 
 
-STEP 1 : Exploratory Data Analysis
+#STEP 1 : Exploratory Data Analysis
 
->> Prepared training and testing dataframes from features given in text files. A total of 561 features are there.
+ Prepared training and testing dataframes from features given in text files. A total of 561 features are there.
 
->> Performed data cleaning.
+-> Performed data cleaning.
 
 >> Checked for data imbalance.
 
@@ -21,7 +21,7 @@ STEP 1 : Exploratory Data Analysis
 >> Applied t-SNE on the data.
 
 
-STEP 2 : Machine learning Models
+#STEP 2 : Machine learning Models
 
 >> Trained various ML models:
 
