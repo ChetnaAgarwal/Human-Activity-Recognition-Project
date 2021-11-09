@@ -36,7 +36,7 @@ Best accuracy was given by Logistic Regression and RBF SVM classifier (96.27%), 
 
 -> Used Cross Validation to get final accuracies for models using hyperparameter values found out by Grid Search.
 
--> Printed classification report, accuracy obtained and times taken for training and testing the models. Also plotted confusion matrix.
+-> Printed classification report, accuracy obtained and times taken for training and testing the models. Also plotted normalized confusion matrix.
 
 -> Pickle files of saved models are available in the models folder.
 
