@@ -86,6 +86,5 @@ NOTEBOOK 2 - MACHINE LEARNING MODELS
     -> print grid search attributes.
 13. COMPARE ALL MODELS
     -> print out accuracy and error for each model and compare.
-    -> RESULTS :-
         
 14. Save all models using pickle.
